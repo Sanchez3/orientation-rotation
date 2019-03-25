@@ -11,18 +11,21 @@
 // import CSS
 // import animate_css from 'animate.css/animate.min.css';
 import css from '../css/css.css';
-import scss from '../css/sass.scss';
 
+import Game from './entities/Game';
+var game = new Game();
 
-// import Js Plugins/Entities
-
-//ES6 Module
-import Bar1 from './entities/Bar1';
-import Howler from 'howler';
-//CommonJS
-var Bar2 = require('./entities/Bar2');
-
-
+window.cfg = {
+    scale: 1,
+    xscale: 1,
+    yscale: 1,
+    width: window.innerWidth,
+    height: window.innerHeight,
+    pwidth: 750,
+    pheight: 1334,
+    swidth: 0,
+    sheight: 0
+}
 window.h5 = {
     isPc: function() {
         var userAgentInfo = navigator.userAgent;
@@ -42,9 +45,19 @@ window.h5 = {
 
         if (wWidth > wHeight) {
             wFsize = wHeight / 750 * 100;
+            window.cfg.scale = wHeight / 750;
+            window.cfg.xscale = wHeight / 750;
+            window.cfg.yscale = wWidth / 1334;
         } else {
             wFsize = wWidth / 750 * 100;
+            window.cfg.scale = wWidth / 750;
+            window.cfg.xscale = wWidth / 750;
+            window.cfg.yscale = wHeight / 1334;
         }
+        window.cfg.pwidth = wWidth * window.devicePixelRatio;
+        window.cfg.pheight = wHeight * window.devicePixelRatio;
+        window.cfg.swidth = wWidth / window.cfg.scale;
+        window.cfg.sheight = wHeight / window.cfg.scale;
         document.getElementsByTagName('html')[0].style.fontSize = wFsize + 'px';
     },
     eventInit: function() {

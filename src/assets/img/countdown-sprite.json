@@ -1,0 +1,108 @@
+{"frames": {
+
+"countdown_00.png":
+{
+	"frame": {"x":1,"y":807,"w":3,"h":3},
+	"rotated": false,
+	"trimmed": true,
+	"spriteSourceSize": {"x":0,"y":0,"w":3,"h":3},
+	"sourceSize": {"w":750,"h":600}
+},
+"countdown_01.png":
+{
+	"frame": {"x":1,"y":600,"w":750,"h":205},
+	"rotated": false,
+	"trimmed": true,
+	"spriteSourceSize": {"x":0,"y":191,"w":750,"h":205},
+	"sourceSize": {"w":750,"h":600}
+},
+"countdown_02.png":
+{
+	"frame": {"x":1505,"y":1,"w":750,"h":586},
+	"rotated": false,
+	"trimmed": true,
+	"spriteSourceSize": {"x":0,"y":7,"w":750,"h":586},
+	"sourceSize": {"w":750,"h":600}
+},
+"countdown_03.png":
+{
+	"frame": {"x":1,"y":1,"w":750,"h":597},
+	"rotated": false,
+	"trimmed": true,
+	"spriteSourceSize": {"x":0,"y":1,"w":750,"h":597},
+	"sourceSize": {"w":750,"h":600}
+},
+"countdown_04.png":
+{
+	"frame": {"x":753,"y":1,"w":750,"h":594},
+	"rotated": false,
+	"trimmed": true,
+	"spriteSourceSize": {"x":0,"y":3,"w":750,"h":594},
+	"sourceSize": {"w":750,"h":600}
+},
+"countdown_05.png":
+{
+	"frame": {"x":2257,"y":1,"w":750,"h":586},
+	"rotated": false,
+	"trimmed": true,
+	"spriteSourceSize": {"x":0,"y":7,"w":750,"h":586},
+	"sourceSize": {"w":750,"h":600}
+},
+"countdown_06.png":
+{
+	"frame": {"x":3009,"y":1,"w":750,"h":575},
+	"rotated": false,
+	"trimmed": true,
+	"spriteSourceSize": {"x":0,"y":12,"w":750,"h":575},
+	"sourceSize": {"w":750,"h":600}
+},
+"countdown_07.png":
+{
+	"frame": {"x":3009,"y":578,"w":750,"h":565},
+	"rotated": false,
+	"trimmed": true,
+	"spriteSourceSize": {"x":0,"y":17,"w":750,"h":565},
+	"sourceSize": {"w":750,"h":600}
+},
+"countdown_08.png":
+{
+	"frame": {"x":1505,"y":589,"w":750,"h":557},
+	"rotated": false,
+	"trimmed": true,
+	"spriteSourceSize": {"x":0,"y":21,"w":750,"h":557},
+	"sourceSize": {"w":750,"h":600}
+},
+"countdown_09.png":
+{
+	"frame": {"x":2257,"y":589,"w":750,"h":553},
+	"rotated": false,
+	"trimmed": true,
+	"spriteSourceSize": {"x":0,"y":23,"w":750,"h":553},
+	"sourceSize": {"w":750,"h":600}
+},
+"countdown_10.png":
+{
+	"frame": {"x":2257,"y":589,"w":750,"h":553},
+	"rotated": false,
+	"trimmed": true,
+	"spriteSourceSize": {"x":0,"y":23,"w":750,"h":553},
+	"sourceSize": {"w":750,"h":600}
+},
+"countdown_11.png":
+{
+	"frame": {"x":2257,"y":589,"w":750,"h":553},
+	"rotated": false,
+	"trimmed": true,
+	"spriteSourceSize": {"x":0,"y":23,"w":750,"h":553},
+	"sourceSize": {"w":750,"h":600}
+}},
+"meta": {
+	"app": "https://www.codeandweb.com/texturepacker",
+	"version": "1.0",
+	"image": "countdown-sprite.png",
+	"format": "RGBA8888",
+	"size": {"w":3760,"h":1147},
+	"scale": "1",
+	"smartupdate": "$TexturePacker:SmartUpdate:73560c53666c29cf09af007edc82e2e7:8feb931656da5d17ef1b73c97f47fea3:82c86b1e4cd172d84cb68edd1d511e31$"
+}
+}
