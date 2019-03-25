@@ -104,16 +104,16 @@ module.exports = {
             verbose: true,
             dry: false
         }),
-        //Copy Resource
-        // new CopyWebpackPlugin([{
-        //     from: path.resolve(__dirname, "src/assets/img"),
-        //     to: path.resolve(__dirname, "dist/assets/img"),
-        //     ignore: ['.*']
-        // }, {
-        //     from: path.resolve(__dirname, "src/assets/media"),
-        //     to: path.resolve(__dirname, "dist/assets/media"),
-        //     ignore: ['.*']
-        // }]),
+        // Copy Resource
+        new CopyWebpackPlugin([{
+            from: path.resolve(__dirname, "src/assets/img"),
+            to: path.resolve(__dirname, "dist/assets/img"),
+            ignore: ['.*']
+        }, {
+            from: path.resolve(__dirname, "src/assets/models"),
+            to: path.resolve(__dirname, "dist/assets/models"),
+            ignore: ['.*']
+        }]),
         new MiniCssExtractPlugin({
             filename: 'assets/css/[name].[chunkhash].min.css',
             chunkFilename: 'assets/css/[name].[chunkhash].css'
