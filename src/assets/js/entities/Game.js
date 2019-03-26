@@ -440,10 +440,10 @@ class Game {
 
 
             controls = new THREE.DeviceOrientationControls(airplaneMesh);
-            // controls.disconnect();
+            controls.disconnect();
             // airplaneContainer.rotateX(rx);
 
-            // controls.connect();
+            
             // console.log(airplaneMesh.quaternion)
 
             // airplaneMesh.rotation.set(rx, ry, rz);
@@ -477,9 +477,8 @@ class Game {
             var val = i < 10 ? '0' + i : i;
             countdownframes.push(PIXI.Texture.fromFrame(`countdown_${val}.png`));
         }
-         var numframes = [];
+        var numframes = [];
         for (var i = 0; i < 5; i++) {
-         
             numframes.push(PIXI.Texture.fromFrame(`${i+1}.png`));
         }
 
@@ -495,18 +494,32 @@ class Game {
         // countSprite.gotoAndStop(11);
         countSprite.play()
 
-        
-         var numSprite = new PIXI.extras.AnimatedSprite(numframes);
+
+        var numSprite = new PIXI.extras.AnimatedSprite(numframes);
         numSprite.anchor.set(0.5);
         numSprite.x = window.cfg.swidth / 2;
         numSprite.y = window.cfg.sheight / 2;
         game0.addChild(numSprite)
-
-        countSprite.onComplete = function() {
-
-            // countSprite.animationSpeed = -12 / 60;
-            // countSprite.play()
+        numSprite.loop = false;
+        numSprite.animationSpeed = 1 / 60;
+        numSprite.alpha = 1;
+        numSprite.play();
+        numSprite.onComplete = function() {
+            numSprite.alpha = 0;
         }
+
+        numSprite.onFrameChange = function(n) {
+            if (n === 4) {
+                numSprite.onFrameChange = null
+                countSprite.animationSpeed = -10 / 60;
+                countSprite.play();
+                countSprite.onComplete = function() {
+                    // numSprite.alpha = 1;
+                    controls.connect();
+                }
+            }
+        };
+
 
 
 
