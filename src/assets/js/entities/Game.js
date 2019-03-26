@@ -138,7 +138,7 @@ class Game {
                 // this.isdown = true;
                 // this.texture = startButtonDown;
                 // this.alpha = 1;
-                that.initThree()
+                // that.initThree()
                 console.log('go')
             })
             startBtn.on('tap', function() {
@@ -270,6 +270,7 @@ class Game {
                 .add('boat', '/assets/models/boat.json')
                 .add('num-sprite', '/assets/img/num-sprite.json')
                 .add('countdown-sprite', '/assets/img/countdown-sprite.json')
+                .add('starrynight', '/assets/img/starrynight.jpg')
 
             app.loader.onProgress.add(onfileComplete)
             app.loader.onComplete.add(onLoadComplete)
@@ -326,13 +327,13 @@ class Game {
         var airplaneMesh, boatMesh;
         var app = that.app;
         var scene = new THREE.Scene();
-        var camera = new THREE.PerspectiveCamera(75, wWidth / wHeight, 0.1, 3000);
+        var camera = new THREE.PerspectiveCamera(60, wWidth / wHeight, 0.1, 3000);
         // var ctx = document.getElementById('canvas-element').getContext('webgl');
         // console.log(ctx)
         var renderer = new THREE.WebGLRenderer({ antialias: true, preserveDrawingBuffer: true })
         renderer.setSize(wWidth, wHeight);
 
-        camera.position.set(0, 10, 0);
+        camera.position.set(0, 0, 15);
         camera.lookAt(scene.position);
         // scene.add(camera);
         scene.add(camera);
@@ -340,18 +341,18 @@ class Game {
         camera.add(pointLight);
         var boatContainer = new THREE.Object3D();
         var airplaneContainer = new THREE.Object3D();
-        var objCopy = new THREE.Object3D();
         scene.add(airplaneContainer, boatContainer);
         var orbitControls = new THREE.OrbitControls(camera, document.getElementById('canvas-element'))
         // orbitControls.minDistance = 75;
         // orbitControls.maxDistance = 300;
         // orbitControls.enablePan = false;
-        // orbitControls.target.set(0, 0, 0);
-        orbitControls.enableRotate = false
+        orbitControls.target.set(0, 0, 0);
+        // orbitControls.enableRotate = false
         orbitControls.update()
-
+        scene.add(new THREE.GridHelper(1000, 10));
+        scene.add(new THREE.AxesHelper(20));
         var controls;
-
+        var startFlag = false;
 
         var light = new THREE.AmbientLight(0x404040); // Soft white light
         scene.add(light);
@@ -381,6 +382,22 @@ class Game {
         };
 
         function threecallback() {
+
+            var sgeometry = new THREE.SphereBufferGeometry(1500, 40, 40);
+            sgeometry.scale(-1, 1, 1);
+            var starrynight = threeAssets['starrynight'];
+            var smaterial = new THREE.MeshBasicMaterial({
+                map: starrynight,
+                fog: false,
+                transparent: true,
+                opacity: 1
+            });
+
+            var smesh = new THREE.Mesh(sgeometry, smaterial);
+
+            smesh.rotation.y = Math.PI / 2;
+
+
             var texture = threeAssets['color'];
 
             var boatGeo = threeAssets['boat'];
@@ -417,11 +434,12 @@ class Game {
 
             airplaneMesh = new THREE.Mesh(airplaneGeo, airplaneMat);
             airplaneContainer.add(airplaneMesh);
-            // v
+            // scene.add( new THREE.BoxHelper( airplaneMesh ) );
+
             // console.log(airplaneContainer.quaternion)
-            airplaneContainer.rotateX(rx)
+            // airplaneContainer.rotateX(rx)
             // objCopy.rotateX(-rx)
-            airplaneContainer.rotateY(ry)
+            // airplaneContainer.rotateY(ry)
             console.log(airplaneContainer.getWorldQuaternion())
             // console.log(airplaneContainer.rotation)
             airplaneContainer.position.set(0, 0, 0);
@@ -431,7 +449,7 @@ class Game {
             // rx = Math.random() * 2 * Math.PI;
             // ry = Math.random() * 2 * Math.PI;
             // rz = Math.random() * 2 * Math.PI;
-            scene.add(airplaneContainer, objCopy);
+            scene.add(smesh, airplaneContainer);
 
             if (airplaneMesh.quaternion.equals(airplaneContainer.quaternion)) {
                 console.log('true')
@@ -443,7 +461,7 @@ class Game {
             controls.disconnect();
             // airplaneContainer.rotateX(rx);
 
-            
+
             // console.log(airplaneMesh.quaternion)
 
             // airplaneMesh.rotation.set(rx, ry, rz);
@@ -459,7 +477,9 @@ class Game {
         textureLoader.load('/assets/models/color.jpg', function(rs) {
             threeAssets['color'] = rs;
         });
-
+        textureLoader.load('/assets/img/starrynight.jpg', function(rs) {
+            threeAssets['starrynight'] = rs;
+        });
 
 
 
@@ -516,6 +536,7 @@ class Game {
                 countSprite.onComplete = function() {
                     // numSprite.alpha = 1;
                     controls.connect();
+                    startFlag = true;
                 }
             }
         };
@@ -533,31 +554,35 @@ class Game {
         }
         var lasetE;
 
+        function isParallel(v1, v2) {
+
+            var dotValue = v1.dot(v2);
+            // console.log(value.toFixed(2))
+            var crossValue = new THREE.Vector3();
+            crossValue.crossVectors(v1,v2)
+            // value = value.dot(v2.normalize());
+            // console.log(dotValue)
+            if (crossValue.x.toFixed(2) == 0 && crossValue.y.toFixed(2) == 0 && crossValue.z.toFixed(2) == 0&&dotValue>0)
+                return true;
+            return false;
+
+        }
+
         var animate = function() {
             requestAnimationFrame(animate);
             if (controls) {
                 // console.log(controls)
                 controls.update();
             }
-            if (airplaneMesh) {
-
-                var v1 = new THREE.Vector3();
-                var v2 = new THREE.Vector3(0, 1, 0);
+            if (startFlag && airplaneMesh) {
+                var v1 = new THREE.Vector3(0,0,1);
+                var v2 = new THREE.Vector3(0, 0, 1);
+                //object's positive z-axis
                 airplaneMesh.getWorldDirection(v1);
-                // console.log(nowQ,airplaneContainer.getWorldQuaternion())
-                // airplaneContainer.getWorldDirection(v2);
-
-                function isParallel(v1, v2) {
-                    var value = v1.normalize().dot(v2.normalize());
-                    // console.log(value.toFixed(2))
-                    if (value.toFixed(2) == 1.00)
-                        return true;
-                    return false;
-
-                }
-                var cv = new THREE.Vector3();
-                if (isParallel(v1, v2)) {
-                    // alert(1)
+                console.log(v1)
+            
+                if (isParallel(v1, v2)&&airplaneMesh.rotation.z>=0) {
+                    console.log('finish')
                     controls.dispose();
 
                     // TweenMax.to(cv, 0.5, {
