@@ -138,7 +138,8 @@ class Game {
                 // this.isdown = true;
                 // this.texture = startButtonDown;
                 // this.alpha = 1;
-                // that.initThree()
+                startBtn.interactive = false;
+                that.initThree()
                 console.log('go')
             })
             startBtn.on('tap', function() {
@@ -271,6 +272,7 @@ class Game {
                 .add('boat', './assets/models/boat.json')
                 .add('num-sprite', './assets/img/num-sprite.json')
                 .add('countdown-sprite', './assets/img/countdown-sprite.json')
+                .add('coin-sprite', './assets/img/coin-sprite.json')
                 .add('starrynight', './assets/img/starrynight.jpg')
 
             app.loader.onProgress.add(onfileComplete)
@@ -549,8 +551,19 @@ class Game {
             }
         };
 
-
-
+        var coinframes = [];
+        for (var i = 0; i < 16; i++) {
+            var val = i < 10 ? '0' + i : i;
+            coinframes.push(PIXI.Texture.fromFrame(`coin_${val}.png`));
+        }
+        var coinSprite = new PIXI.extras.AnimatedSprite(coinframes);
+        coinSprite.anchor.set(0.5);
+        coinSprite.x = window.cfg.swidth / 2;
+        coinSprite.y = window.cfg.sheight / 2;
+        game0.addChild(coinSprite);
+        coinSprite.animationSpeed = 16 / 60;
+        coinSprite.play();
+        coinSprite.alpha = 0;
 
 
         window.addEventListener('resize', onWindowResize, false);
@@ -590,10 +603,12 @@ class Game {
                 console.log(v1)
 
                 if (isParallel(v1, v2) && airplaneMesh.rotation.z >= 0) {
+                	startFlag=false
                     console.log('finish')
-                    TweenMax.to(airplaneMesh.rotation, 0.3, { x: 0, y: 0, z: 0 });
+                    TweenMax.to(airplaneMesh.rotation, 0.6, { x: 0, y: 0, z: 0 });
                     // alert('Finish')
                     controls.dispose();
+                    TweenMax.to(coinSprite, 0.6, { alpha: 1 })
 
                     // TweenMax.to(cv, 0.5, {
                     //     x: boatContainer.position.x,
