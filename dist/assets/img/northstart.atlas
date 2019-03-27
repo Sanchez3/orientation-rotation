@@ -1,0 +1,279 @@
+
+northstart.png
+size: 648,648
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+beard
+  rotate: false
+  xy: 353, 257
+  size: 29, 21
+  orig: 29, 21
+  offset: 0, 0
+  index: -1
+body
+  rotate: false
+  xy: 216, 329
+  size: 132, 140
+  orig: 132, 140
+  offset: 0, 0
+  index: -1
+body_stroke
+  rotate: false
+  xy: 2, 74
+  size: 146, 154
+  orig: 146, 154
+  offset: 0, 0
+  index: -1
+ear
+  rotate: false
+  xy: 244, 24
+  size: 125, 35
+  orig: 125, 35
+  offset: 0, 0
+  index: -1
+ear_stroke
+  rotate: false
+  xy: 245, 61
+  size: 138, 49
+  orig: 138, 49
+  offset: 0, 0
+  index: -1
+eye
+  rotate: false
+  xy: 152, 2
+  size: 9, 15
+  orig: 9, 15
+  offset: 0, 0
+  index: -1
+eyebrow
+  rotate: false
+  xy: 612, 45
+  size: 20, 42
+  orig: 20, 42
+  offset: 0, 0
+  index: -1
+ground
+  rotate: false
+  xy: 2, 581
+  size: 406, 65
+  orig: 406, 65
+  offset: 0, 0
+  index: -1
+hat
+  rotate: false
+  xy: 587, 89
+  size: 54, 56
+  orig: 54, 56
+  offset: 0, 0
+  index: -1
+hat_stroke
+  rotate: false
+  xy: 81, 2
+  size: 69, 70
+  orig: 69, 70
+  offset: 0, 0
+  index: -1
+head
+  rotate: false
+  xy: 524, 90
+  size: 61, 55
+  orig: 61, 55
+  offset: 0, 0
+  index: -1
+head_stroke
+  rotate: false
+  xy: 2, 2
+  size: 77, 70
+  orig: 77, 70
+  offset: 0, 0
+  index: -1
+larm1
+  rotate: false
+  xy: 433, 403
+  size: 122, 120
+  orig: 122, 120
+  offset: 0, 0
+  index: -1
+larm1_stroke
+  rotate: false
+  xy: 245, 112
+  size: 137, 135
+  orig: 137, 135
+  offset: 0, 0
+  index: -1
+larm2
+  rotate: false
+  xy: 566, 510
+  size: 77, 136
+  orig: 77, 136
+  offset: 0, 0
+  index: -1
+larm2_stroke
+  rotate: false
+  xy: 150, 76
+  size: 93, 152
+  orig: 93, 152
+  offset: 0, 0
+  index: -1
+lfoot
+  rotate: false
+  xy: 560, 147
+  size: 84, 35
+  orig: 84, 35
+  offset: 0, 0
+  index: -1
+lfoot_stroke
+  rotate: false
+  xy: 459, 154
+  size: 99, 49
+  orig: 99, 49
+  offset: 0, 0
+  index: -1
+lhand
+  rotate: false
+  xy: 563, 40
+  size: 47, 47
+  orig: 47, 47
+  offset: 0, 0
+  index: -1
+lhand_stroke
+  rotate: false
+  xy: 450, 28
+  size: 60, 61
+  orig: 60, 61
+  offset: 0, 0
+  index: -1
+lleg
+  rotate: false
+  xy: 2, 230
+  size: 212, 166
+  orig: 212, 166
+  offset: 0, 0
+  index: -1
+lleg_stroke
+  rotate: false
+  xy: 2, 398
+  size: 211, 181
+  orig: 211, 181
+  offset: 0, 0
+  index: -1
+lshoulder
+  rotate: false
+  xy: 560, 184
+  size: 84, 42
+  orig: 84, 42
+  offset: 0, 0
+  index: -1
+lshoulder_stroke
+  rotate: false
+  xy: 152, 19
+  size: 90, 55
+  orig: 90, 55
+  offset: 0, 0
+  index: -1
+pelvis
+  rotate: false
+  xy: 433, 338
+  size: 120, 63
+  orig: 120, 63
+  offset: 0, 0
+  index: -1
+pelvis_stroke
+  rotate: false
+  xy: 216, 249
+  size: 135, 78
+  orig: 135, 78
+  offset: 0, 0
+  index: -1
+rarm1
+  rotate: false
+  xy: 557, 390
+  size: 81, 118
+  orig: 81, 118
+  offset: 0, 0
+  index: -1
+rarm1_stroke
+  rotate: false
+  xy: 459, 205
+  size: 96, 131
+  orig: 96, 131
+  offset: 0, 0
+  index: -1
+rarm2
+  rotate: false
+  xy: 557, 268
+  size: 66, 120
+  orig: 66, 120
+  offset: 0, 0
+  index: -1
+rarm2_stroke
+  rotate: false
+  xy: 350, 335
+  size: 81, 134
+  orig: 81, 134
+  offset: 0, 0
+  index: -1
+rfoot
+  rotate: false
+  xy: 557, 228
+  size: 89, 38
+  orig: 89, 38
+  offset: 0, 0
+  index: -1
+rfoot_stroke
+  rotate: false
+  xy: 353, 280
+  size: 103, 53
+  orig: 103, 53
+  offset: 0, 0
+  index: -1
+rhand
+  rotate: false
+  xy: 512, 40
+  size: 49, 48
+  orig: 49, 48
+  offset: 0, 0
+  index: -1
+rhand_stroke
+  rotate: false
+  xy: 459, 91
+  size: 63, 61
+  orig: 63, 61
+  offset: 0, 0
+  index: -1
+rleg1
+  rotate: false
+  xy: 385, 2
+  size: 63, 130
+  orig: 63, 130
+  offset: 0, 0
+  index: -1
+rleg1_stroke
+  rotate: false
+  xy: 384, 134
+  size: 73, 144
+  orig: 73, 144
+  offset: 0, 0
+  index: -1
+rleg2
+  rotate: false
+  xy: 215, 471
+  size: 185, 108
+  orig: 185, 108
+  offset: 0, 0
+  index: -1
+rleg2_stroke
+  rotate: false
+  xy: 410, 525
+  size: 154, 121
+  orig: 154, 121
+  offset: 0, 0
+  index: -1
+shadow
+  rotate: false
+  xy: 625, 345
+  size: 18, 43
+  orig: 18, 43
+  offset: 0, 0
+  index: -1

@@ -1,0 +1,188 @@
+
+northpig.png
+size: 1132,424
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+beard_1
+  rotate: false
+  xy: 1032, 287
+  size: 93, 40
+  orig: 93, 40
+  offset: 0, 0
+  index: -1
+coin
+  rotate: false
+  xy: 2, 40
+  size: 314, 379
+  orig: 314, 379
+  offset: 0, 0
+  index: -1
+coin2
+  rotate: false
+  xy: 318, 119
+  size: 250, 300
+  orig: 250, 300
+  offset: 0, 0
+  index: -1
+ear1_1
+  rotate: false
+  xy: 570, 143
+  size: 141, 96
+  orig: 141, 96
+  offset: 0, 0
+  index: -1
+ear1_stroke
+  rotate: false
+  xy: 318, 2
+  size: 160, 115
+  orig: 160, 115
+  offset: 0, 0
+  index: -1
+ear2_1
+  rotate: false
+  xy: 975, 329
+  size: 145, 90
+  orig: 145, 90
+  offset: 0, 0
+  index: -1
+ear2_stroke
+  rotate: false
+  xy: 480, 7
+  size: 162, 110
+  orig: 162, 110
+  offset: 0, 0
+  index: -1
+eye_1
+  rotate: false
+  xy: 153, 16
+  size: 16, 22
+  orig: 16, 22
+  offset: 0, 0
+  index: -1
+eyebrow_1
+  rotate: false
+  xy: 2, 2
+  size: 47, 36
+  orig: 47, 36
+  offset: 0, 0
+  index: -1
+face dot_stroke
+  rotate: false
+  xy: 570, 241
+  size: 211, 178
+  orig: 211, 178
+  offset: 0, 0
+  index: -1
+face_1
+  rotate: false
+  xy: 783, 263
+  size: 190, 156
+  orig: 190, 156
+  offset: 0, 0
+  index: -1
+hat_1
+  rotate: false
+  xy: 644, 7
+  size: 157, 134
+  orig: 157, 134
+  offset: 0, 0
+  index: -1
+hat_stroke
+  rotate: false
+  xy: 803, 9
+  size: 179, 156
+  orig: 179, 156
+  offset: 0, 0
+  index: -1
+mouth_1
+  rotate: false
+  xy: 105, 10
+  size: 46, 28
+  orig: 46, 28
+  offset: 0, 0
+  index: -1
+n1
+  rotate: false
+  xy: 968, 172
+  size: 79, 89
+  orig: 79, 89
+  offset: 0, 0
+  index: -1
+n10
+  rotate: false
+  xy: 1049, 227
+  size: 62, 58
+  orig: 62, 58
+  offset: 0, 0
+  index: -1
+n11
+  rotate: false
+  xy: 1049, 176
+  size: 52, 49
+  orig: 52, 49
+  offset: 0, 0
+  index: -1
+n2
+  rotate: false
+  xy: 1096, 131
+  size: 34, 43
+  orig: 34, 43
+  offset: 0, 0
+  index: -1
+n3
+  rotate: false
+  xy: 984, 49
+  size: 110, 121
+  orig: 110, 121
+  offset: 0, 0
+  index: -1
+n4
+  rotate: false
+  xy: 975, 268
+  size: 55, 59
+  orig: 55, 59
+  offset: 0, 0
+  index: -1
+n5
+  rotate: false
+  xy: 801, 167
+  size: 74, 94
+  orig: 74, 94
+  offset: 0, 0
+  index: -1
+n6
+  rotate: false
+  xy: 1096, 86
+  size: 33, 43
+  orig: 33, 43
+  offset: 0, 0
+  index: -1
+n7
+  rotate: false
+  xy: 877, 168
+  size: 89, 93
+  orig: 89, 93
+  offset: 0, 0
+  index: -1
+n8
+  rotate: false
+  xy: 713, 143
+  size: 86, 96
+  orig: 86, 96
+  offset: 0, 0
+  index: -1
+n9
+  rotate: false
+  xy: 984, 5
+  size: 39, 42
+  orig: 39, 42
+  offset: 0, 0
+  index: -1
+teeth
+  rotate: false
+  xy: 51, 3
+  size: 52, 35
+  orig: 52, 35
+  offset: 0, 0
+  index: -1

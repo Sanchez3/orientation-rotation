@@ -1,0 +1,272 @@
+
+southstart.png
+size: 660,656
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+body
+  rotate: false
+  xy: 414, 407
+  size: 132, 140
+  orig: 132, 140
+  offset: 0, 0
+  index: -1
+body_stroke
+  rotate: false
+  xy: 2, 240
+  size: 146, 154
+  orig: 146, 154
+  offset: 0, 0
+  index: -1
+ear
+  rotate: false
+  xy: 607, 270
+  size: 30, 33
+  orig: 30, 33
+  offset: 0, 0
+  index: -1
+ear_stroke
+  rotate: false
+  xy: 607, 305
+  size: 43, 46
+  orig: 43, 46
+  offset: 0, 0
+  index: -1
+eye
+  rotate: false
+  xy: 203, 396
+  size: 9, 13
+  orig: 9, 13
+  offset: 0, 0
+  index: -1
+eyebrow
+  rotate: false
+  xy: 341, 86
+  size: 19, 17
+  orig: 19, 17
+  offset: 0, 0
+  index: -1
+ground
+  rotate: false
+  xy: 2, 589
+  size: 406, 65
+  orig: 406, 65
+  offset: 0, 0
+  index: -1
+hat
+  rotate: false
+  xy: 599, 598
+  size: 54, 56
+  orig: 54, 56
+  offset: 0, 0
+  index: -1
+hat_stroke
+  rotate: false
+  xy: 137, 28
+  size: 69, 70
+  orig: 69, 70
+  offset: 0, 0
+  index: -1
+head
+  rotate: false
+  xy: 273, 48
+  size: 66, 55
+  orig: 66, 55
+  offset: 0, 0
+  index: -1
+head_stroke
+  rotate: false
+  xy: 362, 74
+  size: 77, 70
+  orig: 77, 70
+  offset: 0, 0
+  index: -1
+larm1
+  rotate: false
+  xy: 211, 107
+  size: 81, 118
+  orig: 81, 118
+  offset: 0, 0
+  index: -1
+larm1_stroke
+  rotate: false
+  xy: 509, 270
+  size: 96, 131
+  orig: 96, 131
+  offset: 0, 0
+  index: -1
+larm2
+  rotate: false
+  xy: 294, 105
+  size: 66, 120
+  orig: 66, 120
+  offset: 0, 0
+  index: -1
+larm2_stroke
+  rotate: false
+  xy: 362, 146
+  size: 81, 134
+  orig: 81, 134
+  offset: 0, 0
+  index: -1
+lfoot
+  rotate: false
+  xy: 531, 51
+  size: 89, 38
+  orig: 89, 38
+  offset: 0, 0
+  index: -1
+lfoot_stroke
+  rotate: false
+  xy: 528, 142
+  size: 105, 54
+  orig: 105, 54
+  offset: 0, 0
+  index: -1
+lhand
+  rotate: false
+  xy: 607, 353
+  size: 49, 48
+  orig: 49, 48
+  offset: 0, 0
+  index: -1
+lhand_stroke
+  rotate: false
+  xy: 208, 44
+  size: 63, 61
+  orig: 63, 61
+  offset: 0, 0
+  index: -1
+lleg1
+  rotate: false
+  xy: 414, 549
+  size: 183, 105
+  orig: 183, 105
+  offset: 0, 0
+  index: -1
+lleg1_stroke
+  rotate: false
+  xy: 227, 292
+  size: 150, 117
+  orig: 150, 117
+  offset: 0, 0
+  index: -1
+lleg2
+  rotate: false
+  xy: 146, 108
+  size: 63, 130
+  orig: 63, 130
+  offset: 0, 0
+  index: -1
+lleg2_stroke
+  rotate: false
+  xy: 150, 249
+  size: 75, 145
+  orig: 75, 145
+  offset: 0, 0
+  index: -1
+pelvis
+  rotate: false
+  xy: 227, 227
+  size: 118, 63
+  orig: 118, 63
+  offset: 0, 0
+  index: -1
+pelvis_stroke
+  rotate: false
+  xy: 2, 20
+  size: 133, 78
+  orig: 133, 78
+  offset: 0, 0
+  index: -1
+rarm1
+  rotate: false
+  xy: 445, 135
+  size: 81, 133
+  orig: 81, 133
+  offset: 0, 0
+  index: -1
+rarm1_stroke
+  rotate: false
+  xy: 548, 403
+  size: 95, 144
+  orig: 95, 144
+  offset: 0, 0
+  index: -1
+rarm2
+  rotate: false
+  xy: 379, 282
+  size: 128, 123
+  orig: 128, 123
+  offset: 0, 0
+  index: -1
+rarm2_stroke
+  rotate: false
+  xy: 2, 100
+  size: 142, 138
+  orig: 142, 138
+  offset: 0, 0
+  index: -1
+rfoot
+  rotate: false
+  xy: 441, 42
+  size: 84, 34
+  orig: 84, 34
+  offset: 0, 0
+  index: -1
+rfoot_stroke
+  rotate: false
+  xy: 531, 91
+  size: 99, 49
+  orig: 99, 49
+  offset: 0, 0
+  index: -1
+rhand
+  rotate: false
+  xy: 599, 549
+  size: 47, 47
+  orig: 47, 47
+  offset: 0, 0
+  index: -1
+rhand_stroke
+  rotate: false
+  xy: 341, 11
+  size: 60, 61
+  orig: 60, 61
+  offset: 0, 0
+  index: -1
+rleg
+  rotate: false
+  xy: 2, 396
+  size: 199, 191
+  orig: 199, 191
+  offset: 0, 0
+  index: -1
+rleg_stroke
+  rotate: false
+  xy: 203, 411
+  size: 209, 176
+  orig: 209, 176
+  offset: 0, 0
+  index: -1
+rshoulder
+  rotate: false
+  xy: 441, 78
+  size: 88, 55
+  orig: 88, 55
+  offset: 0, 0
+  index: -1
+rshoulder_stroke
+  rotate: false
+  xy: 528, 198
+  size: 103, 70
+  orig: 103, 70
+  offset: 0, 0
+  index: -1
+shadow
+  rotate: false
+  xy: 403, 31
+  size: 20, 41
+  orig: 20, 41
+  offset: 0, 0
+  index: -1
