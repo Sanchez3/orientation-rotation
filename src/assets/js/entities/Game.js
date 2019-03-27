@@ -49,15 +49,15 @@ class Game {
         // app.renderer.autoResize = true;
         // var  data = require('@/assets/img/p0-bg.png');
         app.loader
-            .add('p0-bg', '/assets/img/p0-bg.png')
-            .add('start-btn0', '/assets/img/start-btn0.png')
-            .add('start-btn1', '/assets/img/start-btn1.png')
-            .add('p0-l0', '/assets/img/p0-l0.png')
-            .add('p0-l1', '/assets/img/p0-l1.png')
-            .add('p-sprites', '/assets/img/p-sprites.json')
-            .add('tfont', '/assets/img/tfont.fnt')
-            .add('southstart', '/assets/img/southstart.json')
-            .add('northstart', '/assets/img/northstart.json')
+            .add('p0-bg', './assets/img/p0-bg.png')
+            .add('start-btn0', './assets/img/start-btn0.png')
+            .add('start-btn1', './assets/img/start-btn1.png')
+            .add('p0-l0', './assets/img/p0-l0.png')
+            .add('p0-l1', './assets/img/p0-l1.png')
+            .add('p-sprites', './assets/img/p-sprites.json')
+            .add('tfont', './assets/img/tfont.fnt')
+            .add('southstart', './assets/img/southstart.json')
+            .add('northstart', './assets/img/northstart.json')
             .load(onBoot);
         var stage0;
 
@@ -267,11 +267,11 @@ class Game {
             });
 
 
-            app.loader.add('airplane', '/assets/models/airplane.json')
-                .add('boat', '/assets/models/boat.json')
-                .add('num-sprite', '/assets/img/num-sprite.json')
-                .add('countdown-sprite', '/assets/img/countdown-sprite.json')
-                .add('starrynight', '/assets/img/starrynight.jpg')
+            app.loader.add('airplane', './assets/models/airplane.json')
+                .add('boat', './assets/models/boat.json')
+                .add('num-sprite', './assets/img/num-sprite.json')
+                .add('countdown-sprite', './assets/img/countdown-sprite.json')
+                .add('starrynight', './assets/img/starrynight.jpg')
 
             app.loader.onProgress.add(onfileComplete)
             app.loader.onComplete.add(onLoadComplete)
@@ -475,17 +475,17 @@ class Game {
             // airplaneMesh.rotation.set(rx, ry, rz);
         }
         var objectLoader = new THREE.LegacyJSONLoader(manager);
-        objectLoader.load('/assets/models/airplane.json', function(rs) {
+        objectLoader.load('./assets/models/airplane.json', function(rs) {
             threeAssets['airplane'] = rs;
         });
-        objectLoader.load('/assets/models/boat.json', function(rs) {
+        objectLoader.load('./assets/models/boat.json', function(rs) {
             threeAssets['boat'] = rs;
         });
         var textureLoader = new THREE.TextureLoader(manager);
-        textureLoader.load('/assets/models/color.jpg', function(rs) {
+        textureLoader.load('./assets/models/color.jpg', function(rs) {
             threeAssets['color'] = rs;
         });
-        textureLoader.load('/assets/img/starrynight.jpg', function(rs) {
+        textureLoader.load('./assets/img/starrynight.jpg', function(rs) {
             threeAssets['starrynight'] = rs;
         });
 
