@@ -145,6 +145,7 @@ class Game {
                 // this.isdown = true;
                 // this.texture = startButtonDown;
                 // this.alpha = 1;
+                startBtn.interactive = false;
                 that.initThree()
                 console.log('go')
             })
@@ -440,7 +441,7 @@ class Game {
             // airplaneContainer.rotateX(rx)
             // objCopy.rotateX(-rx)
             // airplaneContainer.rotateY(ry)
-            console.log(airplaneContainer.getWorldQuaternion())
+            console.log(airplaneContainer.getWorldQuaternion(), airplaneMesh.rotation)
             // console.log(airplaneContainer.rotation)
             airplaneContainer.position.set(0, 0, 0);
             // airplaneMesh.rotation.y = Math.PI;
@@ -456,11 +457,18 @@ class Game {
                 // controls.dispose()
             }
 
-
+            // navigator.permissions.query()
             controls = new THREE.DeviceOrientationControls(airplaneMesh);
             controls.disconnect();
             // airplaneContainer.rotateX(rx);
 
+
+            // const id = setTimeout(() => alert('Enable device orientation in Settings > Safari > Motion & Orientation Access.'), 500);
+
+            // window.addEventListener('deviceorientation', event => {
+            //     clearTimeout(id);
+            //     // ...
+            // });
 
             // console.log(airplaneMesh.quaternion)
 
@@ -559,10 +567,10 @@ class Game {
             var dotValue = v1.dot(v2);
             // console.log(value.toFixed(2))
             var crossValue = new THREE.Vector3();
-            crossValue.crossVectors(v1,v2)
+            crossValue.crossVectors(v1, v2)
             // value = value.dot(v2.normalize());
             // console.log(dotValue)
-            if (crossValue.x.toFixed(2) == 0 && crossValue.y.toFixed(2) == 0 && crossValue.z.toFixed(2) == 0&&dotValue>0)
+            if (crossValue.x.toFixed(1) == 0 && crossValue.y.toFixed(1) == 0 && crossValue.z.toFixed(1) == 0 && dotValue > 0)
                 return true;
             return false;
 
@@ -575,14 +583,16 @@ class Game {
                 controls.update();
             }
             if (startFlag && airplaneMesh) {
-                var v1 = new THREE.Vector3(0,0,1);
+                var v1 = new THREE.Vector3(0, 0, 1);
                 var v2 = new THREE.Vector3(0, 0, 1);
                 //object's positive z-axis
                 airplaneMesh.getWorldDirection(v1);
                 console.log(v1)
-            
-                if (isParallel(v1, v2)&&airplaneMesh.rotation.z>=0) {
+
+                if (isParallel(v1, v2) && airplaneMesh.rotation.z >= 0) {
                     console.log('finish')
+                    TweenMax.to(airplaneMesh.rotation, 0.3, { x: 0, y: 0, z: 0 });
+                    // alert('Finish')
                     controls.dispose();
 
                     // TweenMax.to(cv, 0.5, {
