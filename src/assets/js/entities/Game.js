@@ -344,7 +344,7 @@ class Game {
         camera.add(pointLight);
         var boatContainer = new THREE.Object3D();
         var airplaneContainer = new THREE.Object3D();
-        scene.add(airplaneContainer, boatContainer);
+        scene.add(airplaneContainer);
         var orbitControls = new THREE.OrbitControls(camera, document.getElementById('canvas-element'))
         // orbitControls.minDistance = 75;
         // orbitControls.maxDistance = 300;
@@ -436,16 +436,17 @@ class Game {
 
 
             airplaneMesh = new THREE.Mesh(airplaneGeo, airplaneMat);
+            // airplaneMesh.position.set(0,0,0);
             airplaneContainer.add(airplaneMesh);
             // scene.add( new THREE.BoxHelper( airplaneMesh ) );
 
             // console.log(airplaneContainer.quaternion)
-            // airplaneContainer.rotateX(rx)
+            airplaneContainer.rotateX(rx)
             // objCopy.rotateX(-rx)
-            // airplaneContainer.rotateY(ry)
+            airplaneContainer.rotateY(ry)
             console.log(airplaneContainer.getWorldQuaternion(), airplaneMesh.rotation)
             // console.log(airplaneContainer.rotation)
-            airplaneContainer.position.set(0, 0, 0);
+            airplaneContainer.position.set(0, 1,0);
             // airplaneMesh.rotation.y = Math.PI;
             // camera.lookAt(boatContainer.position);
 
@@ -582,7 +583,7 @@ class Game {
             var crossValue = new THREE.Vector3();
             crossValue.crossVectors(v1, v2)
             // value = value.dot(v2.normalize());
-            // console.log(dotValue)
+            console.log(crossValue)
             if (crossValue.x.toFixed(1) == 0 && crossValue.y.toFixed(1) == 0 && crossValue.z.toFixed(1) == 0 && dotValue > 0)
                 return true;
             return false;
@@ -600,15 +601,20 @@ class Game {
                 var v2 = new THREE.Vector3(0, 0, 1);
                 //object's positive z-axis
                 airplaneMesh.getWorldDirection(v1);
-                console.log(v1)
+                // console.log(v1)
 
                 if (isParallel(v1, v2) && airplaneMesh.rotation.z >= 0) {
                 	startFlag=false
                     console.log('finish')
-                    TweenMax.to(airplaneMesh.rotation, 0.6, { x: 0, y: 0, z: 0 });
-                    // alert('Finish')
                     controls.dispose();
-                    TweenMax.to(coinSprite, 0.6, { alpha: 1 })
+                    // TweenMax.to(airplaneContainer.rotation, 0.6, { x: 0, y: 0, z: 0 });
+                    // airplaneMesh.localToWorld(new THREE.Vector3(0, 0, 1))
+                    // airplaneMesh.rotateOnWorldAxis()
+                    TweenMax.to(airplaneContainer.position, 0.6, { x: 0, y: -2, z: 0,onComplete:function(){
+                    	TweenMax.to(coinSprite, 0.6, { alpha: 1 })
+                    } });
+                    // alert('Finish')
+                    
 
                     // TweenMax.to(cv, 0.5, {
                     //     x: boatContainer.position.x,
@@ -619,31 +625,7 @@ class Game {
                     //     }
                     // })
                 }
-                // console.log(isParallel(v1, v2), rr, v1, v2)
-                // var _rx = airplaneMesh.rotation.x;
-                // var _ry = airplaneMesh.rotation.y;
-                // var _rz = airplaneMesh.rotation.z;
-
-                // if (lasetE.equals(airplaneMesh.rotation))
-                // console.log(airplaneMesh.rotation)
-                // var _r = airplaneMesh.rotation.reorder('XYZ');
-                // var _rr = Math.round(THREE.Math.radToDeg(_r.x));
-                // objCopy.rotateX(-rx)
-                // console.log(_rr)
-
-                // if (!((Math.abs(_rr)-Math.abs(rr))%90)) {
-                // console.log(objCopy.rotation)
-                // if (!lasetE) {
-                //     console.log(airplaneMesh.quaternion)
-                // } 
-
-                // if (airplaneMesh.quaternion.equals(airplaneContainer.quaternion)) {
-                //     console.log('true')
-                //     controls.dispose()
-                // }
             }
-            // cube.rotation.x += 0.01;
-            // cube.rotation.y += 0.01;
             renderer.render(scene, camera);
 
 
