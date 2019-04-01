@@ -576,7 +576,7 @@ class Game {
             crossValue.crossVectors(v1, v2)
             // value = value.dot(v2.normalize());
             console.log(crossValue)
-            if (crossValue.x.toFixed(1) == 0 && crossValue.y.toFixed(1) == 0 && crossValue.z.toFixed(1) == 0 && dotValue >= 0)
+            if (crossValue.x.toFixed(2) == 0 && crossValue.y.toFixed(2) == 0 && crossValue.z.toFixed(2) == 0 && dotValue > 0)
                 return true;
             return false;
 
