@@ -1,6 +1,7 @@
 import * as PIXI from 'pixi.js'
 import 'pixi-spine'
 import TweenMax from 'gsap'
+import PixiPlugin from "gsap/PixiPlugin";
 
 import * as THREE from 'three'
 
@@ -44,7 +45,6 @@ class Game {
         app.renderer.view.style['touch-action'] = 'auto';
 
         app.renderer.plugins.interaction.autoPreventDefault = false;
-        console.log(app.renderer.plugins.interaction.autoPreventDefault)
         this.app = app;
         // app.renderer.autoResize = true;
         // var  data = require('@/assets/img/p0-bg.png');
@@ -172,7 +172,6 @@ class Game {
             var localRect0 = npig.getLocalBounds();
             npig.position.set(localRect0.x, -localRect0.y);
             pigContainer0.addChild(npig);
-            // console.log(npig)
             npig.state.setAnimation(0, 'animation', true);
 
             var pigContainer1 = new PIXI.Container();
@@ -326,17 +325,15 @@ class Game {
         var ry = THREE.Math.degToRad(Math.round(rr));
         var rz = 0;
         // objCopy.rotation.reorder('YXZ');
-        console.log(rx)
         var airplaneMesh, boatMesh;
         var app = that.app;
         var scene = new THREE.Scene();
         var camera = new THREE.PerspectiveCamera(60, wWidth / wHeight, 0.1, 3000);
         // var ctx = document.getElementById('canvas-element').getContext('webgl');
-        // console.log(ctx)
         var renderer = new THREE.WebGLRenderer({ antialias: true, preserveDrawingBuffer: true })
         renderer.setSize(wWidth, wHeight);
 
-        camera.position.set(0, 0, 15);
+        camera.position.set(0, 5, -15);
         camera.lookAt(scene.position);
         // scene.add(camera);
         scene.add(camera);
@@ -352,7 +349,7 @@ class Game {
         orbitControls.target.set(0, 0, 0);
         // orbitControls.enableRotate = false
         orbitControls.update()
-        scene.add(new THREE.GridHelper(1000, 10));
+        scene.add(new THREE.GridHelper(1000, 100));
         scene.add(new THREE.AxesHelper(20));
         var controls;
         var startFlag = false;
@@ -398,7 +395,7 @@ class Game {
 
             var smesh = new THREE.Mesh(sgeometry, smaterial);
 
-            smesh.rotation.y = Math.PI / 2;
+            smesh.rotation.y = -Math.PI / 2;
 
 
             var texture = threeAssets['color'];
@@ -437,16 +434,16 @@ class Game {
 
             airplaneMesh = new THREE.Mesh(airplaneGeo, airplaneMat);
             // airplaneMesh.position.set(0,0,0);
-            airplaneContainer.add(airplaneMesh);
-            // scene.add( new THREE.BoxHelper( airplaneMesh ) );
 
-            // console.log(airplaneContainer.quaternion)
+            var box = new THREE.BoxHelper(airplaneMesh);
+            airplaneMesh.add(box);
+            airplaneContainer.add(airplaneMesh);
+
             airplaneContainer.rotateX(rx)
-            // objCopy.rotateX(-rx)
             airplaneContainer.rotateY(ry)
-            console.log(airplaneContainer.getWorldQuaternion(), airplaneMesh.rotation)
-            // console.log(airplaneContainer.rotation)
-            airplaneContainer.position.set(0, 1,0);
+
+
+            airplaneContainer.position.set(0, 1, 0);
             // airplaneMesh.rotation.y = Math.PI;
             // camera.lookAt(boatContainer.position);
 
@@ -454,11 +451,6 @@ class Game {
             // ry = Math.random() * 2 * Math.PI;
             // rz = Math.random() * 2 * Math.PI;
             scene.add(smesh, airplaneContainer);
-
-            if (airplaneMesh.quaternion.equals(airplaneContainer.quaternion)) {
-                console.log('true')
-                // controls.dispose()
-            }
 
             // navigator.permissions.query()
             controls = new THREE.DeviceOrientationControls(airplaneMesh);
@@ -472,8 +464,6 @@ class Game {
             //     clearTimeout(id);
             //     // ...
             // });
-
-            // console.log(airplaneMesh.quaternion)
 
             // airplaneMesh.rotation.set(rx, ry, rz);
         }
@@ -535,6 +525,8 @@ class Game {
         numSprite.animationSpeed = 1 / 60;
         numSprite.alpha = 1;
         numSprite.play();
+        // TweenMax.to(numSprite.scale, 1, {x:0, y:0,repeat:5});
+        TweenMax.from(numSprite, 1, { pixi: { scaleX: 0, scaleY: 0 }, repeat: 5, ease: Strong.easeInOut })
         numSprite.onComplete = function() {
             numSprite.alpha = 0;
         }
@@ -579,12 +571,12 @@ class Game {
         function isParallel(v1, v2) {
 
             var dotValue = v1.dot(v2);
-            // console.log(value.toFixed(2))
+
             var crossValue = new THREE.Vector3();
             crossValue.crossVectors(v1, v2)
             // value = value.dot(v2.normalize());
             console.log(crossValue)
-            if (crossValue.x.toFixed(1) == 0 && crossValue.y.toFixed(1) == 0 && crossValue.z.toFixed(1) == 0 && dotValue > 0)
+            if (crossValue.x.toFixed(1) == 0 && crossValue.y.toFixed(1) == 0 && crossValue.z.toFixed(1) == 0 && dotValue >= 0)
                 return true;
             return false;
 
@@ -593,28 +585,32 @@ class Game {
         var animate = function() {
             requestAnimationFrame(animate);
             if (controls) {
-                // console.log(controls)
                 controls.update();
             }
+
             if (startFlag && airplaneMesh) {
                 var v1 = new THREE.Vector3(0, 0, 1);
                 var v2 = new THREE.Vector3(0, 0, 1);
                 //object's positive z-axis
                 airplaneMesh.getWorldDirection(v1);
-                // console.log(v1)
 
                 if (isParallel(v1, v2) && airplaneMesh.rotation.z >= 0) {
-                	startFlag=false
+                    startFlag = false
                     console.log('finish')
                     controls.dispose();
                     // TweenMax.to(airplaneContainer.rotation, 0.6, { x: 0, y: 0, z: 0 });
                     // airplaneMesh.localToWorld(new THREE.Vector3(0, 0, 1))
                     // airplaneMesh.rotateOnWorldAxis()
-                    TweenMax.to(airplaneContainer.position, 0.6, { x: 0, y: -2, z: 0,onComplete:function(){
-                    	TweenMax.to(coinSprite, 0.6, { alpha: 1 })
-                    } });
+                    TweenMax.to(airplaneContainer.position, 0.6, {
+                        x: 0,
+                        y: -2,
+                        z: 0,
+                        onComplete: function() {
+                            TweenMax.to(coinSprite, 0.6, { alpha: 1 })
+                        }
+                    });
                     // alert('Finish')
-                    
+
 
                     // TweenMax.to(cv, 0.5, {
                     //     x: boatContainer.position.x,
